@@ -90,7 +90,7 @@ def MAE(y_test, y_pred):
 
 if __name__ == "__main__":
     # Number of images to generate.
-    n=1000
+    n=10
     coordinates = save_plot(n)
     image_list = load_images(n)
     x_train, x_test, y_train, y_test = datasets_creation(image_list, coordinates)
@@ -98,6 +98,6 @@ if __name__ == "__main__":
     # so it is ommited in the shapes passed to the function
     model = get_model(x_train.shape[1:], y_train.shape[1:][0])
     model.compile(loss='mae', optimizer='adam')
-    model.fit(x_train, y_train, batch_size=50, epochs=50, validation_split=0.1)
+    model.fit(x_train, y_train, batch_size=50, epochs=10, validation_split=0.1)
     y_pred = model.predict(x_test, batch_size = 50)
     print(f"The MAE on test set is: {MAE(y_test, y_pred)}")
