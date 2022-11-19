@@ -11,7 +11,7 @@ There are four different filters available:
 - blur
 - edges which uses Sobel operator
 
-#### 1. line coordinates
+#### 2. line coordinates
 
 Builds a model which predicts the start and end coordinates of a black line on a white background. This is computer vision model, so it uses only the
 images of the line in JPG format for predictions.
